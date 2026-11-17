@@ -1,26 +1,115 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Bonya design tokens. Every colour, font and easing used on the site lives here.
+ * Change a value once and it flows through every utility (bg-paper, text-ink, etc.).
+ */
+@theme {
+  /* Colour */
+  --color-paper: #fcfaf6; /* warm off-white page background */
+  --color-paper-deep: #f3efe7; /* subtle panel / alternate section */
+  --color-ink: #1a1816; /* near-black text */
+  --color-ink-soft: #5f5953; /* secondary text, 6.6:1 on paper */
+  --color-line: #e2dcd2; /* hairlines and borders */
+  --color-timber: #43362d; /* accent: charred timber, matches the logo */
+  --color-timber-light: #7a6553;
+  --color-stone: #a39e95;
+
+  /* Type */
+  --font-serif: var(--font-newsreader), "Times New Roman", serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --text-display: clamp(2.75rem, 7vw, 5.5rem);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.02em;
+  --text-headline: clamp(2rem, 4.5vw, 3.5rem);
+  --text-headline--line-height: 1.08;
+  --text-headline--letter-spacing: -0.015em;
+  --text-title: clamp(1.5rem, 2.6vw, 2rem);
+  --text-title--line-height: 1.15;
+  --text-label: 0.6875rem;
+  --text-label--line-height: 1.4;
+  --text-label--letter-spacing: 0.18em;
+
+  /* Motion */
+  --ease-calm: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-timber);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--color-timber);
+    color: var(--color-paper);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Fade-in on scroll (see components/Reveal.tsx). Content is visible without JS. */
+@layer utilities {
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 900ms var(--ease-calm),
+      transform 900ms var(--ease-calm);
+  }
+  .js [data-reveal][data-visible="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .js [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@keyframes drawer-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  dialog {
+    animation: none !important;
+  }
 }
