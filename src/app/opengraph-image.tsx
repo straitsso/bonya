@@ -27,7 +27,7 @@ export default async function Image() {
       >
         <img src={src} width={507} height={192} alt="" />
         <div style={{ fontSize: 26, letterSpacing: 6, color: "#5f5953", textTransform: "uppercase" }}>
-          {site.heroLabel}
+          {site.heroHeadline}
         </div>
       </div>
     ),

@@ -15,8 +15,9 @@ export const site = {
       : "http://localhost:3000"),
   description:
     "Architectural outdoor saunas, designed in London and built by hand from thermally modified timber.",
-  heroLabel: "Designed in London",
-  heroHeadline: "Heat, slowly made",
+  /** Small label above the hero headline. Set to undefined to hide it. */
+  heroLabel: undefined as string | undefined,
+  heroHeadline: "Room to slow down",
   locale: "en_GB",
   currency: "GBP",
   /** Booking links. Replace with your Cal.com / Calendly event URLs. */
@@ -25,7 +26,7 @@ export const site = {
     call: "https://cal.com/bonya/video-call",
   },
   /** Hero video in /public. Set to undefined to show the poster image only. */
-  heroVideo: "/video/hero.mp4" as string | undefined,
+  heroVideo: undefined as string | undefined,
   email: "hello@bonya.co.uk",
   socials: [
     { label: "Instagram", href: "https://instagram.com/" },
