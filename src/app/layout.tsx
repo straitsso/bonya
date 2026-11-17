@@ -27,6 +27,16 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image" },
 };
 
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: site.name,
+  url: site.url,
+  logo: `${site.url}/logo.png`,
+  email: site.email,
+  sameAs: site.socials.map((s) => s.href),
+};
+
 export const viewport: Viewport = {
   themeColor: "#fcfaf6",
 };
@@ -51,6 +61,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </main>
         <Footer />
         <RevealObserver />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
       </body>
     </html>
   );

@@ -7,7 +7,7 @@ import { primaryNav, site } from "@content/site";
 import { Logo } from "./Logo";
 
 /** Routes that open with a full-bleed dark hero, where the header starts transparent. */
-const HERO_ROUTES = [/^\/$/];
+const HERO_ROUTES = [/^\/$/, /^\/saunas\/[^/]+$/, /^\/about$/];
 
 export function Header() {
   const pathname = usePathname();

@@ -1,4 +1,4 @@
-import type { ElementType, ReactNode } from "react";
+import type { ElementType, HTMLAttributes, ReactNode } from "react";
 
 /**
  * Fades its children in when scrolled into view. Pure markup: the single
@@ -9,14 +9,20 @@ export function Reveal({
   as: Tag = "div",
   className,
   delay = 0,
+  ...rest
 }: {
   children: ReactNode;
   as?: ElementType;
   className?: string;
   delay?: number;
-}) {
+} & Omit<HTMLAttributes<HTMLElement>, "children" | "className">) {
   return (
-    <Tag data-reveal className={className} style={delay ? { transitionDelay: `${delay}ms` } : undefined}>
+    <Tag
+      data-reveal
+      className={className}
+      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
+      {...rest}
+    >
       {children}
     </Tag>
   );

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 
-type Variant = "solid" | "outline" | "light" | "text";
+type Variant = "solid" | "outline" | "light" | "paper" | "text";
 
 const base =
   "inline-flex items-center justify-center gap-2 text-[0.8125rem] font-medium tracking-wide transition-colors duration-300 ease-calm";
@@ -10,6 +10,8 @@ const variants: Record<Variant, string> = {
   solid: "min-h-12 px-7 bg-ink text-paper hover:bg-timber",
   outline: "min-h-12 px-7 border border-ink/80 text-ink hover:bg-ink hover:text-paper",
   light: "min-h-12 px-7 border border-paper/80 text-paper hover:bg-paper hover:text-ink",
+  /** Solid button for dark backgrounds. */
+  paper: "min-h-12 px-7 border border-paper bg-paper text-ink hover:bg-transparent hover:text-paper",
   text: "min-h-11 underline decoration-1 underline-offset-[6px] decoration-current/40 hover:decoration-current",
 };
 

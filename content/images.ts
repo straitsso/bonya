@@ -58,6 +58,10 @@ export const images = {
     src: u("1617372607364-f55cb6fa0502"),
     alt: "A timber cabin dusted with snow in a quiet forest",
   },
+  interiorBright: {
+    src: u("1655194911126-6032bdcccc9d"),
+    alt: "A pale timber sauna interior with a black heater and a wide window onto snow and pine trees",
+  },
   journalSteam: {
     src: u("1759216852708-d57a21133557"),
     alt: "Water poured from a ladle onto hot sauna stones",

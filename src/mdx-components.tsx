@@ -2,6 +2,7 @@ import type { MDXComponents } from "mdx/types";
 
 /** Global typography for journal MDX. */
 const components: MDXComponents = {
+  h1: (props) => <h1 className="mb-12 text-headline" {...props} />,
   h2: (props) => <h2 className="mt-14 mb-4 text-title" {...props} />,
   h3: (props) => <h3 className="mt-10 mb-3 text-[1.25rem]" {...props} />,
   p: (props) => <p className="mb-6 text-[1.0625rem] leading-[1.8] text-ink/90" {...props} />,
