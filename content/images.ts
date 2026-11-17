@@ -22,17 +22,42 @@ export const images = {
     src: u("1713270176378-45fbf4a27099"),
     alt: "Timber sauna interior opening onto a still lake at sunset",
   },
-  luneHero: {
-    src: u("1712659606957-b7395ba9ebb2"),
-    alt: "Dark timber sauna interior with a stone heater and a tall window framing snowy mountains",
+  // Bonya product photography (2–3 person model).
+  luneStudioFront: {
+    src: "/images/lune-studio-front.webp",
+    alt: "Lune from the front: a rounded sauna clad in vertical timber slats with a full-height glass door",
   },
-  luneDetail: {
-    src: u("1757940661240-f2e8d2ff93bf"),
-    alt: "Warm lighting along timber benches beside a stone heater",
+  luneStudioAbove: {
+    src: "/images/lune-studio-above.webp",
+    alt: "Lune seen from above, its soft rounded corners and dark slatted roof",
   },
-  luneBench: {
-    src: u("1712659601630-df4ad47defc8"),
-    alt: "A timber bench beside a window looking out to a winter landscape",
+  luneStudioDoor: {
+    src: "/images/lune-studio-door.webp",
+    alt: "Lune with its timber door open, showing the warm cedar interior",
+  },
+  luneStudioBack: {
+    src: "/images/studio-back.webp",
+    alt: "The rear of the sauna, a continuous wall of vertical timber slats",
+  },
+  luneHouse: {
+    src: "/images/lune-house.webp",
+    alt: "Lune beneath the deep overhang of a modern house, set among garden planting",
+  },
+  luneEntering: {
+    src: "/images/lune-entering.webp",
+    alt: "A woman stepping into Lune through its glass door on a sunlit terrace",
+  },
+  luneGardenCouple: {
+    src: "/images/lune-garden-couple.webp",
+    alt: "Two people walking across a garden terrace towards the sauna",
+  },
+  luneInsideCouple: {
+    src: "/images/lune-inside-couple.webp",
+    alt: "Two people talking on the cedar benches inside Lune",
+  },
+  luneWaterside: {
+    src: "/images/lune-waterside.webp",
+    alt: "Lune on a terrace by the water, someone resting on the upper bench inside",
   },
   fellHero: {
     src: u("1604609165742-58e1b9cf0457"),
@@ -51,12 +76,12 @@ export const images = {
     alt: "A timber bucket and ladle resting on a sauna bench",
   },
   design: {
-    src: u("1710772195999-92e5301e8587"),
-    alt: "Low evening sun across the timber door and window of a sauna",
+    src: "/images/lune-studio-above.webp",
+    alt: "Lune seen from above, its soft rounded corners and dark slatted roof",
   },
   story: {
-    src: u("1617372607364-f55cb6fa0502"),
-    alt: "A timber cabin dusted with snow in a quiet forest",
+    src: "/images/lune-garden-couple.webp",
+    alt: "Two people walking across a garden terrace towards the sauna",
   },
   interiorBright: {
     src: u("1655194911126-6032bdcccc9d"),

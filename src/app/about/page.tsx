@@ -33,7 +33,7 @@ const principles = [
 export default function AboutPage() {
   return (
     <>
-      <Hero label="Our story" headline="A better room for an old ritual" poster={images.fellDeck} size="medium" />
+      <Hero label="Our story" headline="A better room for an old ritual" poster={images.luneHouse} size="medium" />
 
       <Section width="narrow" aria-labelledby="beginning-heading">
         <Reveal>
@@ -56,7 +56,7 @@ export default function AboutPage() {
       </Section>
 
       <Section tone="deep" width="wide" aria-labelledby="workshop-heading">
-        <SplitBlock image={images.interiorBright}>
+        <SplitBlock image={images.luneInsideCouple}>
           <Label className="text-ink-soft">The workshop</Label>
           <h2 id="workshop-heading" className="mt-4 text-headline">
             Built by hand in East London
@@ -86,7 +86,7 @@ export default function AboutPage() {
       </Section>
 
       <Section tone="deep" width="wide" aria-labelledby="timber-heading">
-        <SplitBlock image={images.design} reverse>
+        <SplitBlock image={images.luneStudioDoor} reverse>
           <Label className="text-ink-soft">Materials</Label>
           <h2 id="timber-heading" className="mt-4 text-headline">
             Timber that is meant to weather

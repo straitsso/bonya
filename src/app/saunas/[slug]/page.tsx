@@ -44,7 +44,7 @@ export default async function ProductPage({ params }: PageProps<"/saunas/[slug]"
 
   const others = products.filter((p) => p.slug !== product.slug);
   // The hero is already shown full-bleed, so the gallery skips it.
-  const [first, ...rest] = product.images.gallery.filter((img) => img.src !== product.images.hero.src);
+  const gallery = product.images.gallery.filter((img) => img.src !== product.images.hero.src);
   const enquireHref = `/enquire?model=${product.slug}`;
 
   const jsonLd = {
@@ -92,36 +92,22 @@ export default async function ProductPage({ params }: PageProps<"/saunas/[slug]"
       </Section>
 
       {/* Gallery */}
-      <section aria-label={`${product.name} gallery`} className="pb-24 md:pb-40">
-        <div className="mx-auto max-w-7xl space-y-4 px-6 md:space-y-6 md:px-10">
-          {first ? (
-            <Reveal>
-              <Picture
-                image={first}
-                desktop={{ width: 1800, height: 1000 }}
-                mobile={{ width: 900, height: 1100 }}
-                sizes="(min-width: 1280px) 1200px, 100vw"
-                className="h-auto w-full object-cover"
-              />
-            </Reveal>
-          ) : null}
-          {rest.length ? (
-            <div className="grid gap-4 md:grid-cols-2 md:gap-6">
-              {rest.map((img, i) => (
-                <Reveal key={img.src} delay={(i % 2) * 120}>
-                  <Picture
-                    image={img}
-                    desktop={{ width: 1000, height: 1200 }}
-                    mobile={{ width: 900, height: 1000 }}
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                    className="h-auto w-full object-cover"
-                  />
-                </Reveal>
-              ))}
-            </div>
-          ) : null}
-        </div>
-      </section>
+      {gallery.length ? (
+        <section aria-label={`${product.name} gallery`} className="pb-24 md:pb-40">
+          <div className="mx-auto grid max-w-7xl gap-4 px-6 md:grid-cols-2 md:gap-6 md:px-10">
+            {gallery.map((img, i) => (
+              <Reveal key={img.src} delay={(i % 2) * 120}>
+                <Picture
+                  image={img}
+                  desktop={{ width: 1000, height: 1220 }}
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="h-auto w-full object-cover"
+                />
+              </Reveal>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       {/* Specs + finishes */}
       <Section tone="deep" width="wide" aria-labelledby="specs-heading">

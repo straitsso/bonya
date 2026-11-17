@@ -73,9 +73,9 @@ export const products: Product[] = [
       "A compact sauna with a single tall window, sized for small gardens and early mornings. One bench, one view, and very little else.",
     priceFrom: 18500,
     images: {
-      card: images.luneHero,
-      hero: images.luneHero,
-      gallery: [images.luneHero, images.luneDetail, images.luneBench],
+      card: images.luneStudioFront,
+      hero: images.luneHouse,
+      gallery: [images.luneEntering, images.luneInsideCouple, images.luneWaterside, images.luneStudioDoor],
     },
     specs: {
       dimensions: "2.2 m × 1.8 m × 2.3 m (L × W × H)",
