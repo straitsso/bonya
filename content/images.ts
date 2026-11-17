@@ -6,7 +6,9 @@
  *   2. Change `src` below to "/images/lune-hero.jpg" and update `alt`
  *   3. For art-directed crops, add a separate `mobileSrc` (e.g. a portrait crop)
  *
- * Unsplash placeholders are cropped on the fly, so `mobileSrc` is optional for them.
+ * Crops are done with object-fit, so a separate `mobileSrc` is only needed when the
+ * subject would be cut off on narrow screens. (Unsplash URLs also work here: they are
+ * cropped on the fly by src/lib/image.ts.)
  */
 export type SiteImage = {
   src: string;
@@ -15,14 +17,8 @@ export type SiteImage = {
   mobileSrc?: string;
 };
 
-const u = (id: string) => `https://images.unsplash.com/photo-${id}`;
-
 export const images = {
-  heroPoster: {
-    src: u("1713270176378-45fbf4a27099"),
-    alt: "Timber sauna interior opening onto a still lake at sunset",
-  },
-  // Bonya product photography (2–3 person model).
+  // Product photography (2–3 person model).
   luneStudioFront: {
     src: "/images/lune-studio-front.webp",
     alt: "Lune from the front: a rounded sauna clad in vertical timber slats with a full-height glass door",
@@ -58,45 +54,5 @@ export const images = {
   luneWaterside: {
     src: "/images/lune-waterside.webp",
     alt: "Lune on a terrace by the water, someone resting on the upper bench inside",
-  },
-  fellHero: {
-    src: u("1604609165742-58e1b9cf0457"),
-    alt: "A pale timber sauna raised on legs above rocks at the water's edge",
-  },
-  fellDeck: {
-    src: u("1757940809566-70aaf9501138"),
-    alt: "Glazed sauna wall reflecting a timber deck and a line of trees at dusk",
-  },
-  fellDetail: {
-    src: u("1757940807425-5d2afa01ddd0"),
-    alt: "Sauna interior with a stone heater and a large picture window",
-  },
-  fellRitual: {
-    src: u("1759300031446-88e81c8a26c9"),
-    alt: "A timber bucket and ladle resting on a sauna bench",
-  },
-  design: {
-    src: "/images/lune-studio-above.webp",
-    alt: "Lune seen from above, its soft rounded corners and dark slatted roof",
-  },
-  story: {
-    src: "/images/lune-garden-couple.webp",
-    alt: "Two people walking across a garden terrace towards the sauna",
-  },
-  interiorBright: {
-    src: u("1655194911126-6032bdcccc9d"),
-    alt: "A pale timber sauna interior with a black heater and a wide window onto snow and pine trees",
-  },
-  journalSteam: {
-    src: u("1759216852708-d57a21133557"),
-    alt: "Water poured from a ladle onto hot sauna stones",
-  },
-  journalLake: {
-    src: u("1660133373249-9e7b4de2efcf"),
-    alt: "A timber walkway leading to a lake through birch trees",
-  },
-  journalTools: {
-    src: u("1678988227223-45112511eca2"),
-    alt: "A black bucket and two timber ladles on a sauna bench",
   },
 } satisfies Record<string, SiteImage>;

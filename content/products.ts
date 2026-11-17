@@ -14,7 +14,7 @@ export type Finish = {
 
 export type Faq = { question: string; answer: string };
 
-export type Product = {
+type ProductBase = {
   slug: string;
   name: string;
   /** One line, shown on the home-page card. */
@@ -23,11 +23,6 @@ export type Product = {
   intro: string;
   /** Guide price, shown as "From £x". Leave undefined to hide. */
   priceFrom?: number;
-  images: {
-    card: SiteImage;
-    hero: SiteImage;
-    gallery: SiteImage[];
-  };
   specs: {
     dimensions: string;
     capacity: string;
@@ -38,6 +33,15 @@ export type Product = {
   finishes: Finish[];
   faqs: Faq[];
 };
+
+type ProductImages = { card: SiteImage; hero: SiteImage; gallery: SiteImage[] };
+
+/**
+ * Set `published: false` to keep a model in this file but hide it everywhere
+ * (pages, home, footer, enquiry form, sitemap). Published models need photos.
+ */
+export type Product = ProductBase & { published: true; images: ProductImages };
+type DraftProduct = ProductBase & { published: false; images?: ProductImages };
 
 const sharedFinishes: Finish[] = [
   { name: "Charred", color: "#2b2622" },
@@ -64,9 +68,10 @@ const sharedFaqs: Faq[] = [
   },
 ];
 
-export const products: Product[] = [
+const allProducts: (Product | DraftProduct)[] = [
   {
     slug: "lune",
+    published: true,
     name: "Lune",
     tagline: "A quiet room for two or three.",
     intro:
@@ -96,16 +101,13 @@ export const products: Product[] = [
   },
   {
     slug: "fell",
+    // Hidden until we have photographs of the 4–6 person model.
+    published: false,
     name: "Fell",
     tagline: "Room for four to six, and a changing space.",
     intro:
       "A larger sauna with a glazed front and a separate changing room. Built for families, friends and long evenings in the garden.",
     priceFrom: 29500,
-    images: {
-      card: images.fellHero,
-      hero: images.fellHero,
-      gallery: [images.fellHero, images.fellDeck, images.fellDetail, images.fellRitual],
-    },
     specs: {
       dimensions: "3.6 m × 2.2 m × 2.4 m (L × W × H)",
       capacity: "4–6 people",
@@ -124,6 +126,9 @@ export const products: Product[] = [
     ],
   },
 ];
+
+/** Published models only. Everything on the site reads from this. */
+export const products = allProducts.filter((p): p is Product => p.published);
 
 export function getProduct(slug: string) {
   return products.find((p) => p.slug === slug);

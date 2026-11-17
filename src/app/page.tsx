@@ -17,17 +17,21 @@ export default async function Home() {
 
   return (
     <>
-      <Hero label={site.heroLabel} headline={site.heroHeadline} poster={images.heroPoster} videoSrc={site.heroVideo} />
+      <Hero label={site.heroLabel} headline={site.heroHeadline} poster={images.luneHouse} videoSrc={site.heroVideo} />
 
       {/* Models */}
       <Section id="saunas" width="wide" aria-labelledby="saunas-heading">
         <Reveal className="mx-auto max-w-xl text-center">
           <Label className="text-ink-soft">The saunas</Label>
           <h2 id="saunas-heading" className="mt-4 text-headline">
-            Two rooms, one idea
+            {products.length > 1 ? "Two rooms, one idea" : "A quiet room for the garden"}
           </h2>
         </Reveal>
-        <div className="mt-16 grid gap-16 md:mt-24 md:grid-cols-2 md:gap-10">
+        <div
+          className={`mt-16 grid gap-16 md:mt-24 md:gap-10 ${
+            products.length > 1 ? "md:grid-cols-2" : "mx-auto max-w-xl"
+          }`}
+        >
           {products.map((product, i) => (
             <Reveal key={product.slug} delay={i * 120}>
               <ProductCard product={product} />
@@ -38,7 +42,7 @@ export default async function Home() {
 
       {/* Design approach */}
       <Section tone="deep" width="wide" aria-labelledby="design-heading">
-        <SplitBlock image={images.design}>
+        <SplitBlock image={images.luneStudioAbove}>
           <Label className="text-ink-soft">Design</Label>
           <h2 id="design-heading" className="mt-4 text-headline">
             Made to disappear into the garden
@@ -52,7 +56,7 @@ export default async function Home() {
 
       {/* Story teaser */}
       <Section width="wide" aria-labelledby="story-heading">
-        <SplitBlock image={images.story} reverse>
+        <SplitBlock image={images.luneGardenCouple} reverse>
           <Label className="text-ink-soft">Our story</Label>
           <h2 id="story-heading" className="mt-4 text-headline">
             A small workshop, a long tradition

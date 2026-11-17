@@ -8,7 +8,7 @@ export const faqGroups: { title: string; items: Faq[] }[] = [
       {
         question: "Which size is right for me?",
         answer:
-          "Lune seats two or three comfortably and suits most gardens. Fell seats four to six and adds a changing room. If you are unsure, book a call and we will talk it through.",
+          "Lune seats two or three comfortably and suits most gardens. A larger model for four to six is in development. If you are unsure, book a call and we will talk it through.",
       },
       {
         question: "Electric or wood-fired?",
@@ -18,7 +18,7 @@ export const faqGroups: { title: string; items: Faq[] }[] = [
       {
         question: "Can I see one before ordering?",
         answer:
-          "Yes. You are welcome to visit our workshop in East London, where both models are set up and ready to try. Book a time from the home page.",
+          "Yes. You are welcome to visit our workshop in East London, where Lune is set up and ready to try. Book a time from the home page.",
       },
     ],
   },

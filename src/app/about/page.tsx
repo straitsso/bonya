@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Our Story",
   description: "A small London workshop building architectural outdoor saunas by hand, for daily ritual and long restoration.",
   alternates: { canonical: "/about" },
-  openGraph: { title: "Our Story", images: [ogImage(images.story)] },
+  openGraph: { title: "Our Story", images: [ogImage(images.luneGardenCouple)] },
 };
 
 const principles = [
