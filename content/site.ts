@@ -4,8 +4,15 @@
  */
 export const site = {
   name: "Bonya",
-  /** Used for absolute URLs (sitemap, OG). Override with NEXT_PUBLIC_SITE_URL. */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  /**
+   * Used for absolute URLs (sitemap, OG). Set NEXT_PUBLIC_SITE_URL once you have a
+   * custom domain; until then Vercel's production domain is used automatically.
+   */
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "http://localhost:3000"),
   description:
     "Architectural outdoor saunas, designed in London and built by hand from thermally modified timber.",
   heroLabel: "Designed in London",
