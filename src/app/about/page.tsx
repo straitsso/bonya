@@ -10,7 +10,7 @@ import { ogImage } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Our Story",
-  description: "A small London workshop building architectural outdoor saunas by hand, for daily ritual and long restoration.",
+  description: "A small workshop building architectural outdoor saunas by hand, for daily ritual and long restoration.",
   alternates: { canonical: "/about" },
   openGraph: { title: "Our Story", images: [ogImage(images.luneGardenCouple)] },
 };
@@ -43,8 +43,8 @@ export default function AboutPage() {
           </h2>
           <div className="mt-8 space-y-5 text-[1.0625rem] leading-[1.8] text-ink/90">
             <p>
-              Bonya began with a borrowed sauna, a draughty timber shed at the bottom of a friend&rsquo;s garden in
-              North London. It was not beautiful, but every evening spent in it ended the same way: quieter, warmer
+              Bonya began with a borrowed sauna, a draughty timber shed at the bottom of a friend&rsquo;s
+              garden. It was not beautiful, but every evening spent in it ended the same way: quieter, warmer
               and more at ease.
             </p>
             <p>
@@ -59,7 +59,7 @@ export default function AboutPage() {
         <SplitBlock image={images.luneInsideCouple}>
           <Label className="text-ink-soft">The workshop</Label>
           <h2 id="workshop-heading" className="mt-4 text-headline">
-            Built by hand in East London
+            Built by hand, start to finish
           </h2>
           <p className="mt-6 text-ink-soft">
             Our saunas are made start to finish in one workshop. We cut, join, finish and test every sauna before it

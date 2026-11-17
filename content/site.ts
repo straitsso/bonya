@@ -14,7 +14,7 @@ export const site = {
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
       : "http://localhost:3000"),
   description:
-    "Architectural outdoor saunas, designed in London and built by hand from thermally modified timber.",
+    "Architectural outdoor saunas, built by hand from thermally modified timber.",
   /** Small label above the hero headline. Set to undefined to hide it. */
   heroLabel: undefined as string | undefined,
   heroHeadline: "Room to slow down",

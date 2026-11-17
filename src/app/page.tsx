@@ -106,7 +106,7 @@ export default async function Home() {
             Sit in one before you decide
           </h2>
           <p className="mx-auto mt-6 max-w-md text-ink-soft">
-            Visit our workshop in East London, or let us walk you through the details on a video call. There is no
+            Visit our workshop, or let us walk you through the details on a video call. There is no
             obligation, and no hurry.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">

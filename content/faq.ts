@@ -18,7 +18,7 @@ export const faqGroups: { title: string; items: Faq[] }[] = [
       {
         question: "Can I see one before ordering?",
         answer:
-          "Yes. You are welcome to visit our workshop in East London, where Lune is set up and ready to try. Book a time from the home page.",
+          "Yes. You are welcome to visit our workshop, where Lune is set up and ready to try. Book a time from the home page.",
       },
     ],
   },
